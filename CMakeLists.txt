@@ -58,7 +58,7 @@ include_directories(osal)
 include_directories(osal/${OS})
 include_directories(oshw/${OS})
 
-add_library(soem STATIC
+add_library(soem SHARED
   ${SOEM_SOURCES}
   ${OSAL_SOURCES}
   ${OSHW_SOURCES}
@@ -73,7 +73,3 @@ install(FILES
   ${OSAL_HEADERS}
   ${OSHW_HEADERS}
   DESTINATION ${SOEM_INCLUDE_INSTALL_DIR})
-
-add_subdirectory(test/linux/slaveinfo)
-add_subdirectory(test/linux/eepromtool)
-add_subdirectory(test/linux/simple_test)

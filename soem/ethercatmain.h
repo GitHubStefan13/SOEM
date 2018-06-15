@@ -425,53 +425,53 @@ typedef struct ecx_context
 
 #ifdef EC_VER1
 /** global struct to hold default master context */
-extern ecx_contextt  ecx_context;
+_declspec(dllexport) extern ecx_contextt  ecx_context;
 /** main slave data structure array */
-extern ec_slavet   ec_slave[EC_MAXSLAVE];
+__declspec(dllexport) extern ec_slavet   ec_slave[EC_MAXSLAVE];
 /** number of slaves found by configuration function */
-extern int         ec_slavecount;
+__declspec(dllexport) extern int         ec_slavecount;
 /** slave group structure */
-extern ec_groupt   ec_group[EC_MAXGROUP];
-extern boolean     EcatError;
-extern int64       ec_DCtime;
+_declspec(dllexport) extern ec_groupt   ec_group[EC_MAXGROUP];
+_declspec(dllexport) extern boolean     EcatError;
+_declspec(dllexport) extern int64       ec_DCtime;
 
-void ec_pusherror(const ec_errort *Ec);
-boolean ec_poperror(ec_errort *Ec);
-boolean ec_iserror(void);
-void ec_packeterror(uint16 Slave, uint16 Index, uint8 SubIdx, uint16 ErrorCode);
-int ec_init(const char * ifname);
-int ec_init_redundant(const char *ifname, char *if2name);
-void ec_close(void);
-uint8 ec_siigetbyte(uint16 slave, uint16 address);
-int16 ec_siifind(uint16 slave, uint16 cat);
-void ec_siistring(char *str, uint16 slave, uint16 Sn);
-uint16 ec_siiFMMU(uint16 slave, ec_eepromFMMUt* FMMU);
-uint16 ec_siiSM(uint16 slave, ec_eepromSMt* SM);
-uint16 ec_siiSMnext(uint16 slave, ec_eepromSMt* SM, uint16 n);
-int ec_siiPDO(uint16 slave, ec_eepromPDOt* PDO, uint8 t);
-int ec_readstate(void);
-int ec_writestate(uint16 slave);
-uint16 ec_statecheck(uint16 slave, uint16 reqstate, int timeout);
-int ec_mbxempty(uint16 slave, int timeout);
-int ec_mbxsend(uint16 slave,ec_mbxbuft *mbx, int timeout);
-int ec_mbxreceive(uint16 slave, ec_mbxbuft *mbx, int timeout);
-void ec_esidump(uint16 slave, uint8 *esibuf);
-uint32 ec_readeeprom(uint16 slave, uint16 eeproma, int timeout);
-int ec_writeeeprom(uint16 slave, uint16 eeproma, uint16 data, int timeout);
-int ec_eeprom2master(uint16 slave);
-int ec_eeprom2pdi(uint16 slave);
-uint64 ec_readeepromAP(uint16 aiadr, uint16 eeproma, int timeout);
-int ec_writeeepromAP(uint16 aiadr, uint16 eeproma, uint16 data, int timeout);
-uint64 ec_readeepromFP(uint16 configadr, uint16 eeproma, int timeout);
-int ec_writeeepromFP(uint16 configadr, uint16 eeproma, uint16 data, int timeout);
-void ec_readeeprom1(uint16 slave, uint16 eeproma);
-uint32 ec_readeeprom2(uint16 slave, int timeout);
-int ec_send_processdata_group(uint8 group);
-int ec_send_overlap_processdata_group(uint8 group);
-int ec_receive_processdata_group(uint8 group, int timeout);
-int ec_send_processdata(void);
-int ec_send_overlap_processdata(void);
-int ec_receive_processdata(int timeout);
+_declspec(dllexport) void ec_pusherror(const ec_errort *Ec);
+_declspec(dllexport) boolean ec_poperror(ec_errort *Ec);
+_declspec(dllexport) boolean ec_iserror(void);
+_declspec(dllexport) void ec_packeterror(uint16 Slave, uint16 Index, uint8 SubIdx, uint16 ErrorCode);
+_declspec(dllexport) int ec_init(const char * ifname);
+_declspec(dllexport) int ec_init_redundant(const char *ifname, char *if2name);
+_declspec(dllexport) void ec_close(void);
+_declspec(dllexport) uint8 ec_siigetbyte(uint16 slave, uint16 address);
+_declspec(dllexport) int16 ec_siifind(uint16 slave, uint16 cat);
+_declspec(dllexport) void ec_siistring(char *str, uint16 slave, uint16 Sn);
+_declspec(dllexport) uint16 ec_siiFMMU(uint16 slave, ec_eepromFMMUt* FMMU);
+_declspec(dllexport) uint16 ec_siiSM(uint16 slave, ec_eepromSMt* SM);
+_declspec(dllexport) uint16 ec_siiSMnext(uint16 slave, ec_eepromSMt* SM, uint16 n);
+_declspec(dllexport) int ec_siiPDO(uint16 slave, ec_eepromPDOt* PDO, uint8 t);
+_declspec(dllexport) int ec_readstate(void);
+_declspec(dllexport) int ec_writestate(uint16 slave);
+_declspec(dllexport) uint16 ec_statecheck(uint16 slave, uint16 reqstate, int timeout);
+_declspec(dllexport) int ec_mbxempty(uint16 slave, int timeout);
+_declspec(dllexport) int ec_mbxsend(uint16 slave,ec_mbxbuft *mbx, int timeout);
+_declspec(dllexport) int ec_mbxreceive(uint16 slave, ec_mbxbuft *mbx, int timeout);
+_declspec(dllexport) void ec_esidump(uint16 slave, uint8 *esibuf);
+_declspec(dllexport) uint32 ec_readeeprom(uint16 slave, uint16 eeproma, int timeout);
+_declspec(dllexport) int ec_writeeeprom(uint16 slave, uint16 eeproma, uint16 data, int timeout);
+_declspec(dllexport) int ec_eeprom2master(uint16 slave);
+_declspec(dllexport) int ec_eeprom2pdi(uint16 slave);
+_declspec(dllexport) uint64 ec_readeepromAP(uint16 aiadr, uint16 eeproma, int timeout);
+_declspec(dllexport) int ec_writeeepromAP(uint16 aiadr, uint16 eeproma, uint16 data, int timeout);
+_declspec(dllexport) uint64 ec_readeepromFP(uint16 configadr, uint16 eeproma, int timeout);
+_declspec(dllexport) int ec_writeeepromFP(uint16 configadr, uint16 eeproma, uint16 data, int timeout);
+_declspec(dllexport) void ec_readeeprom1(uint16 slave, uint16 eeproma);
+_declspec(dllexport) uint32 ec_readeeprom2(uint16 slave, int timeout);
+_declspec(dllexport) int ec_send_processdata_group(uint8 group);
+_declspec(dllexport) int ec_send_overlap_processdata_group(uint8 group);
+_declspec(dllexport) int ec_receive_processdata_group(uint8 group, int timeout);
+_declspec(dllexport) int ec_send_processdata(void);
+_declspec(dllexport) int ec_send_overlap_processdata(void);
+_declspec(dllexport) int ec_receive_processdata(int timeout);
 #endif
 
 ec_adaptert * ec_find_adapters(void);
