@@ -17,9 +17,9 @@ extern "C"
 #endif
 
 #ifdef EC_VER1
-boolean ec_configdc();
-void ec_dcsync0(uint16 slave, boolean act, uint32 CyclTime, int32 CyclShift);
-void ec_dcsync01(uint16 slave, boolean act, uint32 CyclTime0, uint32 CyclTime1, int32 CyclShift);
+__declspec(dllexport) boolean ec_configdc();
+__declspec(dllexport) void ec_dcsync0(uint16 slave, boolean act, uint32 CyclTime, int32 CyclShift);
+__declspec(dllexport) void ec_dcsync01(uint16 slave, boolean act, uint32 CyclTime0, uint32 CyclTime1, int32 CyclShift);
 #endif
 
 boolean ecx_configdc(ecx_contextt *context);

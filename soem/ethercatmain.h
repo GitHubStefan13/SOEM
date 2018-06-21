@@ -435,6 +435,8 @@ _declspec(dllexport) extern ec_groupt   ec_group[EC_MAXGROUP];
 _declspec(dllexport) extern boolean     EcatError;
 _declspec(dllexport) extern int64       ec_DCtime;
 
+
+__declspec(dllexport) ec_slavet * get_ec_slave(uint8 Idx);
 _declspec(dllexport) void ec_pusherror(const ec_errort *Ec);
 _declspec(dllexport) boolean ec_poperror(ec_errort *Ec);
 _declspec(dllexport) boolean ec_iserror(void);

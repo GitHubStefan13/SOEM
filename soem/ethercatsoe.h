@@ -114,9 +114,9 @@ typedef struct PACKED
 PACKED_END
 
 #ifdef EC_VER1
-int ec_SoEread(uint16 slave, uint8 driveNo, uint8 elementflags, uint16 idn, int *psize, void *p, int timeout);
-int ec_SoEwrite(uint16 slave, uint8 driveNo, uint8 elementflags, uint16 idn, int psize, void *p, int timeout);
-int ec_readIDNmap(uint16 slave, int *Osize, int *Isize);
+__declspec(dllexport) int ec_SoEread(uint16 slave, uint8 driveNo, uint8 elementflags, uint16 idn, int *psize, void *p, int timeout);
+__declspec(dllexport) int ec_SoEwrite(uint16 slave, uint8 driveNo, uint8 elementflags, uint16 idn, int psize, void *p, int timeout);
+__declspec(dllexport) int ec_readIDNmap(uint16 slave, int *Osize, int *Isize);
 #endif
 
 int ecx_SoEread(ecx_contextt *context, uint16 slave, uint8 driveNo, uint8 elementflags, uint16 idn, int *psize, void *p, int timeout);

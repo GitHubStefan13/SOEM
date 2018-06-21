@@ -1978,6 +1978,14 @@ int ecx_receive_processdata(ecx_contextt *context, int timeout)
 }
 
 #ifdef EC_VER1
+ec_slavet * get_ec_slave(uint8 Idx)
+{
+	if (Idx < EC_MAXSLAVE) 
+		return &ec_slave[Idx]; 
+	else 
+		return NULL;
+}
+
 void ec_pusherror(const ec_errort *Ec)
 {
    ecx_pusherror(&ecx_context, Ec);

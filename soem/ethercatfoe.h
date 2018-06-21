@@ -17,9 +17,9 @@ extern "C"
 #endif
 
 #ifdef EC_VER1
-int ec_FOEdefinehook(void *hook);
-int ec_FOEread(uint16 slave, char *filename, uint32 password, int *psize, void *p, int timeout);
-int ec_FOEwrite(uint16 slave, char *filename, uint32 password, int psize, void *p, int timeout);
+__declspec(dllexport) int ec_FOEdefinehook(void *hook);
+__declspec(dllexport) int ec_FOEread(uint16 slave, char *filename, uint32 password, int *psize, void *p, int timeout);
+__declspec(dllexport) int ec_FOEwrite(uint16 slave, char *filename, uint32 password, int psize, void *p, int timeout);
 #endif
 
 int ecx_FOEdefinehook(ecx_contextt *context, void *hook);
