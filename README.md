@@ -13,8 +13,8 @@ This is a Fork of Simple Open EtherCAT Master Library
    * .a for Linux
 
  * Example API can be found here:
-[![Python](https://github.com/GitHubStefan13/SOEM)](https://github.com/GitHubStefan13/SOEM)
-[![Lazarus](https://github.com/GitHubStefan13/SOEM)](https://github.com/GitHubStefan13/SOEM)
+[Python](https://github.com/GitHubStefan13/SOEM-for-Python)
+[Lazarus](https://github.com/GitHubStefan13/SOEM-for-Pascal)
 
 BUILDING
 ========
