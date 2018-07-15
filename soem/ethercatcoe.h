@@ -23,7 +23,8 @@ extern "C"
 #define EC_MAXOELIST   256
 
 /* Storage for object description list */
-typedef struct
+PACKED_BEGIN
+typedef struct PACKED
 {
    /** slave number */
    uint16  Slave;
@@ -40,9 +41,11 @@ typedef struct
    /** textual description of each index */
    char    Name[EC_MAXODLIST][EC_MAXNAME+1];
 } ec_ODlistt;
+PACKED_END
 
 /* storage for object list entry information */
-typedef struct
+PACKED_BEGIN
+typedef struct PACKED
 {
    /** number of entries in list */
    uint16 Entries;
@@ -57,6 +60,7 @@ typedef struct
    /** textual description of each index */
    char   Name[EC_MAXOELIST][EC_MAXNAME+1];
 } ec_OElistt;
+PACKED_END
 
 #ifdef EC_VER1
 __declspec(dllexport) void ec_SDOerror(uint16 Slave, uint16 Index, uint8 SubIdx, int32 AbortCode);
